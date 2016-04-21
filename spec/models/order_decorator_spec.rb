@@ -28,7 +28,7 @@ describe Spree::Order do
       end
     end
 
-    it 'should NOT deliver experience drop ship orders when Spree::experienceDropShipConfig[:send_experience_email] == false' do
+    it 'should NOT deliver experience drop ship orders when Spree::ExperienceDropShipConfig[:send_experience_email] == false' do
       SpreeExperienceDropShip::Config[:send_experience_email] = false
       order = create(:order_with_totals, ship_address: create(:address))
       order.line_items = [create(:line_item, variant: create(:variant_with_experience)), create(:line_item, variant: create(:variant_with_experience))]
